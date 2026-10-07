@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GitHub Web Interface for Internet-Draft Authoring - Cheat Sheet</title>
+
+<style>
+:root {
+    --ietf-blue: #005a9c;
+    --border: #d0d7de;
+    --bg: #f6f8fa;
+    --warning-bg: #fff8c5;
+    --warning-border: #d4a72c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    color: #24292f;
+    margin: 20px;
+    line-height: 1.35;
+    font-size: 12px;
+}
+
+h1 {
+    color: var(--ietf-blue);
+    margin: 0;
+    font-size: 28px;
+}
+
+.subtitle {
+    margin-top: 4px;
+    margin-bottom: 16px;
+    color: #57606a;
+    font-size: 14px;
+}
+
+.columns {
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.section {
+    break-inside: avoid;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background: white;
+    overflow: hidden;
+}
+
+.section h2 {
+    background: var(--ietf-blue);
+    color: white;
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 15px;
+}
+
+.content {
+    padding: 10px 12px;
+}
+
+ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+ul {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-left: 18px;
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+.button {
+    font-weight: bold;
+    padding: 1px 5px;
+    border-radius: 4px;
+    border: 1px solid #d8dee4;
+    background: #f6f8fa;
+}
+
+.path {
+    font-family: Consolas, Monaco, monospace;
+    background: #f6f8fa;
+    border: 1px solid #d8dee4;
+    padding: 6px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.note {
+    background: var(--warning-bg);
+    border-left: 4px solid var(--warning-border);
+    padding: 8px;
+    margin-top: 8px;
+}
+
+pre {
+    background: #f6f8fa;
+    border: 1px solid #d8dee4;
+    border-radius: 6px;
+    padding: 8px;
+    margin: 8px 0;
+    overflow-x: auto;
+}
+
+a {
+    color: var(--ietf-blue);
+}
+
+.checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist li {
+    margin-bottom: 3px;
+}
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
+    body {
+        margin: 0;
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .columns {
+        column-count: 2;
+        column-gap: 14px;
+    }
+
+    .section {
+        margin-bottom: 8px;
+    }
+
+    .section h2 {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .content {
+        padding: 8px 10px;
+    }
+
+    li {
+        margin-bottom: 2px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>GitHub Web Interface for Internet-Draft Authoring</h1>
+<div class="subtitle">
+IETF-126 Hands-on Tutorial Cheat Sheet
+</div>
+
+<div class="columns">
+
+<div class="section">
+<h2>1. Create Your Draft Repository</h2>
+<div class="content">
+
+<p><strong>Template Repository</strong></p>
+
+<p>
+<a href="https://github.com/martinthomson/internet-draft-template">
+github.com/martinthomson/internet-draft-template
+</a>
+</p>
+
+<ol>
+<li>Open the template repository.</li>
+<li>Click <span class="button">Use this template</span>.</li>
+<li>Select <span class="button">Create a new repository</span>.</li>
+<li>Enter repository name and description.</li>
+<li>✅ Check <span class="button">Include all branches</span>.</li>
+<li>Click <span class="button">Create repository</span>.</li>
+</ol>
+
+<div class="note">
+<strong>Important:</strong> Ensure <strong>Include all branches</strong> is selected.
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<h2>2. Create the Initial Draft</h2>
+<div class="content">
+
+<ol>
+<li>Open the draft file (<code>draft-*.md</code> or <code>.xml</code>).</li>
+<li>Click <span class="button">Edit this file</span> (✏).</li>
+<li>Rename the filename.</li>
+<li>Rename the draft name inside the file.</li>
+<li>Update:
+    <ul>
+        <li>Title</li>
+        <li>Authors</li>
+        <li>Affiliations</li>
+        <li>Email addresses</li>
+        <li>Abstract</li>
+    </ul>
+</li>
+<li>Click <span class="button">Commit changes...</span>.</li>
+<li>Select <span class="button">Commit directly to the main branch</span>.</li>
+<li>Click <span class="button">Commit changes</span>.</li>
+</ol>
+
+</div>
+</div>
+
+<div class="section">
+<h2>3. Add Co-authors / Contributors</h2>
+<div class="content">
+
+<div class="path">
+Settings → Collaborators &amp; teams → Add people
+</div>
+
+<ol>
+<li>Open <span class="button">Settings</span>.</li>
+<li>Select <span class="button">Collaborators &amp; teams</span>.</li>
+<li>Click <span class="button">Add people</span>.</li>
+<li>Enter GitHub username.</li>
+<li>Send invitation.</li>
+</ol>
+
+</div>
+</div>
+
+<div class="section">
+<h2>4. Create an Issue (Optional)</h2>
+<div class="content">
+
+<div class="path">
+Issues → New issue
+</div>
+
+<ol>
+<li>Open <span class="button">Issues</span>.</li>
+<li>Click <span class="button">New issue</span>.</li>
+<li>Enter title and description.</li>
+<li>Add labels and assignees (optional).</li>
+<li>Click <span class="button">Create issue</span>.</li>
+</ol>
+
+<p><strong>Suggested labels</strong></p>
+
+<ul>
+<li>editorial</li>
+<li>clarification</li>
+<li>design change</li>
+<li>needs discussion</li>
+<li>has PR</li>
+<li>resolution</li>
+<li>no action needed</li>
+</ul>
+
+</div>
+</div>
+
+<div class="section">
+<h2>5. Edit the Draft Using a Pull Request</h2>
+<div class="content">
+
+<ol>
+<li>Open the draft file.</li>
+<li>Click <span class="button">Edit this file</span>.</li>
+<li>Make changes.</li>
+<li>Click <span class="button">Commit changes...</span>.</li>
+<li>Select:<br><br>
+
+<span class="button">
+Create a new branch for this commit and start a pull request
+</span>
+
+</li>
+<li>Click <span class="button">Propose changes</span>.</li>
+<li>Review summary.</li>
+<li>Click <span class="button">Create pull request</span>.</li>
+<li>Enter title and description.</li>
+<li>Click <span class="button">Create pull request</span>.</li>
+</ol>
+
+</div>
+</div>
+
+<div class="section">
+<h2>6. Link a Pull Request to an Issue</h2>
+<div class="content">
+
+<p>Add one of the following lines to the PR description:</p>
+
+<pre>Fixes #12
+
+Closes #12
+
+Resolves #12</pre>
+
+<p>
+GitHub will automatically close the issue when the PR is merged.
+</p>
+
+</div>
+</div>
+
+<div class="section">
+<h2>7. Request Reviews</h2>
+<div class="content">
+
+<div class="path">
+Pull Request → Reviewers
+</div>
+
+<ol>
+<li>Open the Pull Request.</li>
+<li>Locate <span class="button">Reviewers</span> on the right side.</li>
+<li>Click the reviewer selector.</li>
+<li>Select reviewer(s).</li>
+<li>Optionally leave a comment asking for review.</li>
+</ol>
+
+</div>
+</div>
+
+<div class="section">
+<h2>8. Review a Pull Request</h2>
+<div class="content">
+
+<ol>
+<li>Open the Pull Request.</li>
+<li>Select <span class="button">Files changed</span>.</li>
+<li>Hover over a line.</li>
+<li>Click <span class="button">+</span>.</li>
+<li>Add a comment or suggestion.</li>
+<li>Click:
+    <ul>
+        <li><span class="button">Start a review</span></li>
+        <li>or <span class="button">Add single comment</span></li>
+    </ul>
+</li>
+<li>Click <span class="button">Review changes</span>.</li>
+<li>Select:
+    <ul>
+        <li>Comment</li>
+        <li>Approve</li>
+        <li>Request changes</li>
+    </ul>
+</li>
+<li>Click <span class="button">Submit review</span>.</li>
+</ol>
+
+</div>
+</div>
+
+<div class="section">
+<h2>9. Merge the Pull Request</h2>
+<div class="content">
+
+<ol>
+<li>Open the Pull Request.</li>
+<li>Verify:
+    <ul>
+        <li>Review completed.</li>
+        <li>Checks passed ✅.</li>
+    </ul>
+</li>
+<li>Click <span class="button">Merge pull request</span>.</li>
+<li>Click <span class="button">Confirm merge</span>.</li>
+</ol>
+
+</div>
+</div>
+
+<div class="section">
+<h2>10. Resolve Merge Conflicts</h2>
+<div class="content">
+
+<ol>
+<li>Click <span class="button">Resolve conflicts</span>.</li>
+<li>Edit conflicting sections.</li>
+<li>Click <span class="button">Mark as resolved</span>.</li>
+<li>Click <span class="button">Commit merge</span>.</li>
+</ol>
+
+</div>
+</div>
+
+<div class="section">
+<h2>11. Check the Build</h2>
+<div class="content">
+
+<div class="path">
+Actions
+</div>
+
+<ol>
+<li>Open <span class="button">Actions</span>.</li>
+<li>Verify workflow completed successfully ✅.</li>
+<li>Open the generated Editor's Copy.</li>
+<li>Check:
+    <ul>
+        <li>Formatting</li>
+        <li>References</li>
+        <li>Figures</li>
+        <li>Markdown rendering</li>
+    </ul>
+</li>
+</ol>
+
+<p><strong>Common Problems</strong></p>
+
+<ul>
+<li>Formatting errors</li>
+<li>Broken references</li>
+<li>Markdown syntax issues</li>
+</ul>
+
+<p>
+SVG Support:<br>
+<a href="https://github.com/cabo/kramdown-rfc/wiki/SVG">
+github.com/cabo/kramdown-rfc/wiki/SVG
+</a>
+</p>
+
+</div>
+</div>
+
+<div class="section">
+<h2>12. Submit a New Draft Version</h2>
+<div class="content">
+
+<div class="path">
+Releases → Create a new release
+</div>
+
+<ol>
+<li>Open <span class="button">Releases</span>.</li>
+<li>Click <span class="button">Create a new release</span>.</li>
+<li>Create a tag.</li>
+<li>Click <span class="button">Publish release</span>.</li>
+<li>Watch for submission email.</li>
+<li>Confirm the Datatracker email.</li>
+</ol>
+
+<div class="note">
+<strong>Important:</strong><br>
+Tag name must exactly match the draft name.
+</div>
+
+<p><strong>Submission Checklist</strong></p>
+
+<ul class="checklist">
+<li>✅ Build succeeds</li>
+<li>✅ Editor's Copy looks correct</li>
+<li>✅ Draft email matches Datatracker account</li>
+<li>✅ Tag name matches draft name</li>
+</ul>
+
+</div>
+</div>
+
+<div class="section">
+<h2>Useful Links</h2>
+<div class="content">
+
+<ul>
+<li>
+<a href="https://github.com/martinthomson/internet-draft-template">
+Internet-Draft Template Repository
+</a>
+</li>
+
+<li>
+<a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests">
+PR and Issue Keywords
+</a>
+</li>
+
+<li>
+<a href="https://github.com/cabo/kramdown-rfc/wiki/SVG">
+SVG Support in kramdown-rfc
+</a>
+</li>
+</ul>
+
+</div>
+</div
